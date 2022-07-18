@@ -6,16 +6,16 @@ Usage
 
 - Add below code in your app level "build.gradle" file.
 
-dependencies {
+`dependencies {
     implementation("androidx.biometric:biometric:1.2.0-alpha04")
-}
+}`
 
 
 2. Biometric Dialog
 
 - Now add below code for open biometric dialog
 
-private lateinit var executor: Executor
+`private lateinit var executor: Executor
 private lateinit var promptInfo: BiometricPrompt.PromptInfo
 
  executor = ContextCompat.getMainExecutor(this)
@@ -25,22 +25,23 @@ private lateinit var promptInfo: BiometricPrompt.PromptInfo
             .setSubtitle("Log in using your biometric credential") // set subtitle of pop-up
             .setConfirmationRequired(true) // set confirmation button true/false after verified the face id and fingerprint
             .setNegativeButtonText("Cancel") // set negative button label
-            .build()
+            .build()`
 			
 - Now  write a click listener and open biometric dialog
 
-biometricLoginButton.setOnClickListener {
+`biometricLoginButton.setOnClickListener {
             // check device is supported biometric
             if (checkDeviceIsSupportedBiometric()) {
                 biometricPrompt.authenticate(promptInfo)
             }
-        }			
+        }	`		
 
          
 3. Handling results
 
 Handle authentication result 
 
+```
 biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
                 // get error response here if user face id and touch id getting invalid
@@ -69,8 +70,11 @@ biometricPrompt = BiometricPrompt(this, executor,
                     Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_SHORT).show()
                 }
             })
+```
+
 4. If we want to check if the user device is supported fingerprint or face id then check with below method
 
+```
 private fun checkDeviceIsSupportedBiometric(): Boolean {
 
         return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
@@ -84,3 +88,5 @@ private fun checkDeviceIsSupportedBiometric(): Boolean {
         }
 
     }
+```
+
