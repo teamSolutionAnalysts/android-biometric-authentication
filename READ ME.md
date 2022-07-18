@@ -32,12 +32,10 @@ private lateinit var promptInfo: BiometricPrompt.PromptInfo
 
 ```
 biometricLoginButton.setOnClickListener {
-
             // check device is supported biometric    
             if (checkDeviceIsSupportedBiometric()) {
                 biometricPrompt.authenticate(promptInfo)
             }
-
         }	
         
 ```
