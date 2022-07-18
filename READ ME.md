@@ -15,17 +15,22 @@ Usage
 
 - Now add below code for open biometric dialog
 
-`private lateinit var executor: Executor
+
+```
+private lateinit var executor: Executor
 private lateinit var promptInfo: BiometricPrompt.PromptInfo
 
- executor = ContextCompat.getMainExecutor(this)
+executor = ContextCompat.getMainExecutor(this)
  
- promptInfo = BiometricPrompt.PromptInfo.Builder()
+promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Biometric Login") // set title of pop-up
             .setSubtitle("Log in using your biometric credential") // set subtitle of pop-up
             .setConfirmationRequired(true) // set confirmation button true/false after verified the face id and fingerprint
             .setNegativeButtonText("Cancel") // set negative button label
-            .build()`
+            .build()
+
+```
+
 			
 - Now  write a click listener and open biometric dialog
 
@@ -36,8 +41,7 @@ biometricLoginButton.setOnClickListener {
             if (checkDeviceIsSupportedBiometric()) {
                 biometricPrompt.authenticate(promptInfo)
             }
-        }	
-        
+}
 ```
 		
      
