@@ -6,9 +6,11 @@ Usage
 
 - Add below code in your app level "build.gradle" file.
 
-`dependencies {
+```
+dependencies {
     implementation("androidx.biometric:biometric:1.2.0-alpha04")
-}`
+}
+```
 
 
 2. Biometric Dialog
