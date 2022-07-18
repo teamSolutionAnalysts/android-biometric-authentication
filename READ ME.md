@@ -29,7 +29,8 @@ private lateinit var promptInfo: BiometricPrompt.PromptInfo
 			
 - Now  write a click listener and open biometric dialog
 
-`
+
+```
 biometricLoginButton.setOnClickListener {
 
             // check device is supported biometric    
@@ -39,9 +40,9 @@ biometricLoginButton.setOnClickListener {
 
         }	
         
-`		
-
-         
+```
+		
+     
 3. Handling results
 
 Handle authentication result 
